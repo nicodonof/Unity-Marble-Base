@@ -8,6 +8,8 @@ public class SphereMovement : MonoBehaviour
     public float accX = 0;
     public float accY = 0;
 
+    public float speed = 1000;
+
     // Start is called before the first frame update
     void Start(){
         
@@ -18,8 +20,8 @@ public class SphereMovement : MonoBehaviour
         accY = Input.GetAxis("Vertical");
         accX =  Input.GetAxis("Horizontal");
 
-        float newX = Mathf.Clamp(accX + GetComponent<Rigidbody>().velocity.x,-10,10);
-        float newY = Mathf.Clamp(accY + GetComponent<Rigidbody>().velocity.z,-10,10);
+        float newX = Mathf.Clamp((accX * Time.deltaTime + GetComponent<Rigidbody>().velocity.x),-speed,speed);
+        float newY = Mathf.Clamp((accY * Time.deltaTime + GetComponent<Rigidbody>().velocity.z),-speed,speed);
 
         GetComponent<Rigidbody>().velocity = new Vector3(newX, GetComponent<Rigidbody>().velocity.y , newY);
     }

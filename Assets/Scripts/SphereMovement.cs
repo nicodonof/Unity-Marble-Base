@@ -24,5 +24,10 @@ public class SphereMovement : MonoBehaviour
         float newZ = (accY * Time.deltaTime * speed + GetComponent<Rigidbody>().velocity.z);
 
         GetComponent<Rigidbody>().velocity = new Vector3(newX, GetComponent<Rigidbody>().velocity.y , newZ);
+
+        if(Input.GetKey("space")){
+            GetComponent<Rigidbody>().velocity = 
+                new Vector3(GetComponent<Rigidbody>().velocity.x, GetComponent<Rigidbody>().velocity.y + 4 , GetComponent<Rigidbody>().velocity.z);
+        }
     }
 }

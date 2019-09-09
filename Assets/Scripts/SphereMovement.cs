@@ -5,10 +5,14 @@ using UnityEngine;
 public class SphereMovement : MonoBehaviour
 {
 
-    public float accX = 0;
-    public float accY = 0;
+    public float forwadsOrBack = 0;
+    public float lateral = 0;
 
-    public float speed = 20;
+    public float speed = 30;
+
+    public float maxSpeed = 50;
+
+    public Transform cameraTransform;
 
     // Start is called before the first frame update
     void Start(){
@@ -17,17 +21,22 @@ public class SphereMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update(){
-        accX =  Input.GetAxis("Horizontal");
-        accY = Input.GetAxis("Vertical");
+        forwadsOrBack = Input.GetAxis("Vertical");
+        lateral =  Input.GetAxis("Horizontal");
 
-        float newX = (accX * Time.deltaTime * speed + GetComponent<Rigidbody>().velocity.x);
-        float newZ = (accY * Time.deltaTime * speed + GetComponent<Rigidbody>().velocity.z);
+        Vector3 newDir = cameraTransform.forward;
+
+        float newX = Mathf.Clamp((newDir.x * Time.deltaTime * speed * forwadsOrBack + GetComponent<Rigidbody>().velocity.x +
+            (newDir.z * Time.deltaTime * speed * -lateral)) , -maxSpeed, maxSpeed);
+        float newZ = Mathf.Clamp((newDir.z * Time.deltaTime * speed * forwadsOrBack + GetComponent<Rigidbody>().velocity.z +
+            (newDir.x * Time.deltaTime * speed * -lateral)) , -maxSpeed, maxSpeed);
 
         GetComponent<Rigidbody>().velocity = new Vector3(newX, GetComponent<Rigidbody>().velocity.y , newZ);
 
-        if(Input.GetKey("space")){
-            GetComponent<Rigidbody>().velocity = 
-                new Vector3(GetComponent<Rigidbody>().velocity.x, GetComponent<Rigidbody>().velocity.y + 4 , GetComponent<Rigidbody>().velocity.z);
+        if(Input.GetKeyUp(KeyCode.R)){
+            transform.position = new Vector3(29F, 3.85F, 516.44F);
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            
         }
     }
 }

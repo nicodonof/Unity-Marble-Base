@@ -26,10 +26,10 @@ public class SphereMovement : MonoBehaviour
 
         Vector3 newDir = cameraTransform.forward;
 
-        float newX = Mathf.Clamp((newDir.x * Time.deltaTime * speed * forwadsOrBack + GetComponent<Rigidbody>().velocity.x
+        float newX = Mathf.Clamp(newDir.x * Time.deltaTime * speed * forwadsOrBack + GetComponent<Rigidbody>().velocity.x
             // + (newDir.z * Time.deltaTime * speed * -lateral)) 
             , -maxSpeed, maxSpeed);
-        float newZ = Mathf.Clamp((newDir.z * Time.deltaTime * speed * forwadsOrBack + GetComponent<Rigidbody>().velocity.z
+        float newZ = Mathf.Clamp(newDir.z * Time.deltaTime * speed * forwadsOrBack + GetComponent<Rigidbody>().velocity.z
             // + (newDir.x * Time.deltaTime * speed * -lateral)) 
             , -maxSpeed, maxSpeed);
 

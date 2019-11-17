@@ -8,9 +8,9 @@ public class SphereMovement : MonoBehaviour
     public float forwadsOrBack = 0;
     public float lateral = 0;
 
-    public float speed = 30;
+    public float speed = 20;
 
-    public float maxSpeed = 50;
+    public float maxSpeed = 30;
 
     public Transform cameraTransform;
 

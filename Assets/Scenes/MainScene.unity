@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -389,6 +389,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &891765825 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6115182450735649925, guid: 562890175e02a4541988e5869ff9dc30,
+    type: 3}
+  m_PrefabInstance: {fileID: 6115182451385707363}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &891765826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891765825}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 910f320611dcd4ba689936d435f6c9d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
 --- !u!1 &1710152691
 GameObject:
   m_ObjectHideFlags: 0
@@ -852,6 +871,51 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115182450735649930, guid: 562890175e02a4541988e5869ff9dc30,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115182450735649930, guid: 562890175e02a4541988e5869ff9dc30,
+        type: 3}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115182450735649930, guid: 562890175e02a4541988e5869ff9dc30,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115182450735649930, guid: 562890175e02a4541988e5869ff9dc30,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115182450735649931, guid: 562890175e02a4541988e5869ff9dc30,
+        type: 3}
+      propertyPath: m_JumpPower
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115182450735649931, guid: 562890175e02a4541988e5869ff9dc30,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115182450735649931, guid: 562890175e02a4541988e5869ff9dc30,
+        type: 3}
+      propertyPath: m_MovePower
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115182450735649931, guid: 562890175e02a4541988e5869ff9dc30,
+        type: 3}
+      propertyPath: m_UseTorque
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115182450735649924, guid: 562890175e02a4541988e5869ff9dc30,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 562890175e02a4541988e5869ff9dc30, type: 3}
